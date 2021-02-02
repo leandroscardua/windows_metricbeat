@@ -7,7 +7,7 @@
   perfmon.ignore_non_existent_counters: true
   perfmon.group_measurements_by_instance: true
   perfmon.counters:
-    - instance_label: "srtest.local"
+    - instance_label: "instance.name"
       instance_name: "DNS"
       measurement_label: "dns.total.query.received.all"
       query: '\DNS\Total Query Received'
