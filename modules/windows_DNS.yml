@@ -1,4 +1,5 @@
-### Metricbeat 7.6.2 ###
+# Module: windows
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.10/metricbeat-module-windows.html
 
 - module: windows
   metricsets: ["perfmon"]
@@ -6,19 +7,7 @@
   perfmon.ignore_non_existent_counters: true
   perfmon.group_measurements_by_instance: true
   perfmon.counters:
-    - instance_label: "instance.name"
-      instance_name: "NTDS"
+    - instance_label: "srtest.local"
+      instance_name: "DNS"
       measurement_label: "dns.total.query.received.all"
       query: '\DNS\Total Query Received'
-    - instance_label: "instance.name"
-      instance_name: "NTDS"
-      measurement_label: "dns.total.query.received.sec"
-      query: '\DNS\Total Query Received/sec'
-    - instance_label: "instance.name"
-      instance_name: "NTDS"
-      measurement_label: "dns.total.response.sent.all"
-      query: '\DNS\Total Response Sent'
-    - instance_label: "instance.name"
-      instance_name: "NTDS"
-      measurement_label: "dns.total.response.sent.sec"
-      query: '\DNS\Total Response Sent/sec'
