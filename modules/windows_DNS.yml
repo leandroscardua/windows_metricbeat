@@ -1,0 +1,24 @@
+### Metricbeat 7.6.2 ###
+
+- module: windows
+  metricsets: ["perfmon"]
+  period: 10s
+  perfmon.ignore_non_existent_counters: true
+  perfmon.group_measurements_by_instance: true
+  perfmon.counters:
+    - instance_label: "instance.name"
+      instance_name: "NTDS"
+      measurement_label: "dns.total.query.received.all"
+      query: '\DNS\Total Query Received'
+    - instance_label: "instance.name"
+      instance_name: "NTDS"
+      measurement_label: "dns.total.query.received.sec"
+      query: '\DNS\Total Query Received/sec'
+    - instance_label: "instance.name"
+      instance_name: "NTDS"
+      measurement_label: "dns.total.response.sent.all"
+      query: '\DNS\Total Response Sent'
+    - instance_label: "instance.name"
+      instance_name: "NTDS"
+      measurement_label: "dns.total.response.sent.sec"
+      query: '\DNS\Total Response Sent/sec'
