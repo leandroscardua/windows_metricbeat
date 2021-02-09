@@ -2,12 +2,20 @@
 # Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.10/metricbeat-module-windows.html
 
 - module: windows
+  metricsets: ["service"]
+  period: 60s
+
+- module: windows
   metricsets: ["perfmon"]
   period: 10s
   perfmon.ignore_non_existent_counters: true
   perfmon.group_measurements_by_instance: true
   perfmon.counters:
-    - instance_label: "instance.name"
+    - instance_label: "dns.total.query.received.all"
       instance_name: "DNS"
       measurement_label: "dns.total.query.received.all"
       query: '\DNS\Total Query Received'
+
+    - instance_label: "instance.name"
+      measurement_label: "dns.total.response.sent.all"
+      query: '\DNS\Total Response Sent'
